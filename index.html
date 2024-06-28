@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="js-enabled" style="--scrollbar-width: 14px;"><head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preload" href="/fonts/_shared/poppins-v21-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin">
+    <link rel="preload" href="/fonts/_shared/roboto-v30-latin-regular.woff2" as="font" type="font/woff2"
+      crossorigin="crossorigin">
+
+    <link rel="stylesheet" href="/css/app.min.css?v=1.0.0">
+    <link rel="stylesheet" href="/css/critical.min.css">
+
+    <script>
+  document.documentElement.classList.add('js-enabled');
+
+  requestAnimationFrame(() => {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
+  });
+</script>
+
+    <script defer src="/js/app.min.js?v=1.0.0"></script>
+    <title>Home - IDM</title>
+
+    <meta name="theme-color" content="#ede0d4">
+
+    <meta name="description"
+      content="Increase your merchandising efficiency with streamlined employee management, precise data accuracy, and advanced analytics.">
+    <meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
+
+    <link rel="icon" type="image/svg+xml" href="/icon/_favicon/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/_favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/_favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/_favicon/favicon-16x16.png">
+    <link rel="manifest" href="/icon/_favicon/site.webmanifest">
+    <link rel="mask-icon" href="/icon/_favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/icon/_favicon/browserconfig.xml">
+
+  </head>
+  <body class="body" data-csrf-token="895a9203b829fe088ad4f6053e4b7bfc"><script id="__bs_script__">//<![CDATA[
+  (function() {
+    try {
+      var script = document.createElement('script');
+      if ('async') {
+        script.async = true;
+      }
+      script.src = '/browser-sync/browser-sync-client.js?v=2.29.3'.replace("HOST", location.hostname);
+      if (document.body) {
+        document.body.appendChild(script);
+      } else if (document.head) {
+        document.head.appendChild(script);
+      }
+    } catch (e) {
+      console.error("Browsersync: could not append script tag", e);
+    }
+  })()
+//]]></script><script async src="/browser-sync/browser-sync-client.js?v=2.29.3"></script>
+
+    <div class="wrapper">
+      <div class="document-overlay-bg"></div>
+      <dialog class="modal contact-modal with-custom-scrollbar fw-medium" data-modal id="contact-modal"
+        aria-labelledby="contact-modal-title" data-disable-scroll="true">
+        <div class="modal__inner">
+          <h2 class="contact-modal__title title fsz-title-lg center max-ch-25 mb-24-32" id="contact-modal-title">Contact us</h2>
+
+          <ul class="contact-modal__info center fsz-text-xlg">
+            <li class="contact-modal__info-item contact-modal__email mb-24-32">
+              <p>
+                <svg class="contact-modal__icon">
+                  <use href="/icon/_svgsprites/sprites.svg#email"></use>
+                </svg>
+                Our email:
+                <span class="contact-modal__email-address">idatamanage@gmail.com</span>
+                <a class="contact-modal__action btn btn-accent btn-accent--hollow" href="mailto:idatamanage@gmail.com">Email
+                  us</a>
+              </p>
+            </li>
+            <li class="contact-modal__info-item contact-modal__phone">
+              <p>
+                <svg fill="none" class="contact-modal__icon">
+                  <use href="/icon/_svgsprites/sprites.svg#phone"></use>
+                </svg>
+                Our phone number: <span class="contact-modal__phone-number">+995 557-154-331</span>
+                <a class="contact-modal__action btn btn-accent btn-accent--hollow" href="tel:+995557154331">Call us</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <button class="modal__close-btn btn btn-cross" type="button" data-modal-close data-target="contact-modal"
+          title="close"></button>
+      </dialog>
+      <header class="header">
+        <div class="container-lg">
+          <nav class="header__nav nav" aria-label="Main">
+            <div class="header__logo-figure logo-figure">
+              <a class="header__logo logo-figure__link" href="/" title="IDM">
+                <svg class="logo-figure__icon" fill="none" viewBox="0 0 141 61">
+                  <title>IDM</title>
+                  <g class="logo-figure__icon-left">
+                    <path
+                      d="M30.2 3.1c-1 0-22.3 0-25.9 4.8-.4.2-.7.6-.7 1.1 0 .3 0 .6.2.9v9.5c0 6.2 25.3 6.2 26.4 6.2 1 0 26.3 0 26.3-6.2v-10C56.5 3.2 31.2 3 30.2 3Zm0 2.5c13.7 0 22 2.1 23.5 3.5-1 1.4-9.4 3.7-23.7 3.7-13.7 0-22-2.1-23.6-3.5C7.5 7.9 16 5.6 30.2 5.6ZM54 19.3c-.7 1.4-9.1 3.8-23.8 3.8-14.8 0-23.2-2.4-23.9-3.8v-7.2A77.8 77.8 0 0 0 30 15.3c.9 0 17.6 0 24-3.4v7.4Z"></path>
+                    <path
+                      d="M55.2 23.4c-.7 0-1.2.6-1.2 1.3-.7 1.3-9.1 3.7-23.8 3.7C15.4 28.4 7 26 6.3 24.7a1.3 1.3 0 0 0-2.5 0v11C3.8 42 29.1 42 30.2 42c1 0 26.3 0 26.3-6.3v-11c0-.7-.6-1.3-1.3-1.3ZM54 35.7c-.7 1.3-9.1 3.7-23.8 3.7C15.4 39.4 7 37 6.3 35.7v-8c6.5 3.2 23 3.3 23.9 3.3.8 0 17.3 0 23.8-3.3v8Z"></path>
+                    <path
+                      d="M55.2 40c-.7 0-1.2.5-1.2 1.2-.7 1.3-9.1 3.7-23.8 3.7C15.4 45 7 42.5 6.3 41.2a1.3 1.3 0 0 0-2.5 0v11c0 6.2 25.3 6.3 26.4 6.3 1 0 26.3 0 26.3-6.3v-11c0-.7-.6-1.3-1.3-1.3ZM54 52.1c-.7 1.3-9.1 3.8-23.8 3.8C15.4 56 7 53.5 6.3 52.2v-8c6.5 3.2 23 3.3 23.9 3.3.8 0 17.3 0 23.8-3.3v8Z"></path>
+                  </g>
+                  <g class="logo-figure__icon-right">
+                    <path
+                      d="M63.2 0h7.5v30.3h-7.5V0ZM87 30.3H76.3V0h10.6c9.3 0 15.7 6 15.7 15.1 0 9.4-6.7 15.2-15.7 15.2ZM83.7 6.9v16.5H87c5.3 0 8.2-3.3 8.2-8.3 0-1.1-.1-2.1-.4-3.2-1.3-3.6-4.1-5-7.8-5h-3.2Zm31 6.7v16.7h-7.5V0h7.4l9.5 16.7L133.6 0h7.4v30.3h-7.4V13.6l-5.8 9.8h-7.4l-5.8-9.8Z"></path>
+                    <path
+                      d="M63.2 35.7h1.9v7.6h-1.9v-7.6Zm5.2 3.4v4.2h-1.9v-7.6h1.9l2.3 4.2 2.4-4.2h1.8v7.6h-1.8V39l-1.4 2.5h-1.9L68.4 39ZM81 41.8h-2.8l-.6 1.5h-2l3-7.6h2l3 7.6h-2l-.6-1.5ZM78.9 40h1.6l-.8-2.2-.8 2.2Zm11.9-1.3v4.2c-1 .3-2 .5-3 .5-2.4 0-4-1.5-4-3.9 0-2.6 2-3.8 4.3-3.8h1.2l1.1.2v2a3.3 3.3 0 0 0-1-.3l-1.3-.1c-1.5 0-2.4.4-2.4 2s.8 2 2.2 2h1v-1.1h-1.6v-1.7h3.5Zm1.1-3h5.7v1.7h-3.8v1.3h3v1.7h-3v1.2h3.8v1.7h-5.7v-7.6Zm12.6 5.8-1-1a1 1 0 0 0-.4.2l-.2.4c0 .4.5.5 1 .5h.6Zm1.4-2.7h1.8c0 .9-.2 1.6-.5 2.4l.4.2.5.1v1.8c-.7 0-1.4-.4-2-.7-.6.5-1.4.8-2.2.8-1.4 0-2.8-.8-2.8-2.3 0-1 .6-1.7 1.4-2.1a3 3 0 0 1-.2-1.1c0-1.6 1.2-2.2 2.6-2.2h1l1 .2v1.8l-.5-.1h-.5l-.5-.1h-.5c-.4 0-.8 0-.8.5 0 .9 1 1.8 1.6 2.3.2-.4.2-1 .2-1.5Zm8.8 4.5H112v-7.6h2.7c2.3 0 3.9 1.5 3.9 3.8s-1.7 3.8-4 3.8Zm-.8-5.9v4.2h.8c1.3 0 2-.9 2-2v-.9c-.4-.9-1.1-1.3-2-1.3h-.8Zm10.5 4.4h-2.8l-.5 1.5h-2l3-7.6h1.9l3 7.6h-2l-.6-1.5Zm-2.2-1.8h1.6l-.8-2.2-.8 2.2Zm4.2-4.3h6.4v1.7h-2.3v5.9h-1.8v-5.9h-2.3v-1.7Zm12 6h-2.8l-.5 1.6h-2l3-7.6h1.9l3 7.6h-2l-.6-1.5Zm-2.2-1.7h1.6l-.8-2.2-.8 2.2Z"></path>
+                    <path
+                      d="M66.3 53.8v6.8h-3V48.2h3l3.9 6.8 3.9-6.8h3v12.4h-3v-6.8l-2.4 4h-3l-2.4-4Zm21 4.3h-4.7l-.9 2.5h-3.3l5-12.4h3l5 12.4h-3.3l-.9-2.5Zm-3.7-2.8h2.6L85 51.7l-1.3 3.6Zm17-7.1h3.1v12.4h-3l-5-7.3v7.3h-3V48.2h3l5 7.3v-7.3Zm13.2 9.9h-4.6l-.9 2.5H105l5-12.4h3l5 12.4h-3.3l-.9-2.5Zm-3.6-2.8h2.6l-1.3-3.6-1.3 3.6Zm19.6-2.3v7c-1.5.5-3.3.8-4.8.8-4 0-6.7-2.4-6.7-6.3 0-4.3 3.2-6.4 7.1-6.4h1.9l1.9.4v3.1a5.4 5.4 0 0 0-1.7-.4l-2-.2c-2.6 0-4.1.8-4.1 3.5 0 2.5 1.3 3.3 3.7 3.3h1.6v-2h-2.6V53h5.7Zm2-4.8h9.2V51h-6.2v2h5v2.8h-5v2h6.2v2.8h-9.3V48.2Z"></path>
+                  </g>
+                </svg>
+              </a>
+              <a class="visually-hidden visible-on-focus focus-skip-link" href="#main">Skip to main content</a>
+            </div>
+
+            <!-- <button type='button' class='header__burger burger' aria-label='open or close menu' aria-expanded='false' aria-controls='header__list'>
+        <svg class="icon" viewBox="0 0 100 100" aria-hidden='true'>
+          <path class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40" />
+          <path class="line middle" d="m 30,50 h 40" />
+          <path class="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40" />
+        </svg>
+      </button>
+
+      <div class='nav__mobile-menu-effect'></div> -->
+
+            <ul class="header__list nav__list underline-links-on-hover" id="header__list">
+              <li>
+                <a href="#our-services">
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a href="#pricing">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <button class="btn btn-accent btn-accent--filled" data-modal-open data-target="contact-modal"
+                  type="button">Contact Us</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header> <main class="main" id="main">
+        <section class="hero hero--main section-gap-bottom-sm">
+          <div class="hero__gradient">
+            <svg viewBox="0 0 900 600" preserveAspectRatio="none">
+              <path fill="#fff" d="M0 0h900v600H0z"></path>
+              <path fill="#ffe9d5" d="M0 287h129v70h128v-49h129v29h128v25h129v3h128v-80h129v316H0Z"></path>
+              <path fill="#ffdfc0" d="M0 411h129v-51h128v34h129v-26h128v-2h129v63h128v-37h129v209H0Z"></path>
+              <path fill="#ffd5ac" d="M0 468h257v-13h129v73h128v-42h129v26h128v5h129v84H0Z"></path>
+            </svg>
+          </div>
+
+          <div class="hero__inner container-md">
+            <div class="hero__content">
+              <h1 class="hero__title title fsz-title-xlg">Image and data management service</h1>
+              <p class="hero__text fsz-text-lg text-balance">Increase your merchandising efficiency with streamlined employee
+                management, precise data accuracy, and advanced analytics.</p>
+              <div class="hero__actions">
+                <a class="btn btn-accent btn-accent--filled" href="#pricing">Choose your plan</a>
+              </div>
+            </div>
+            <div class="hero__image ibg">
+              <picture>
+                <source srcset="/img/pages/main/hero-image.svg" media="(min-width: 839.98px)" type="image/svg+xml">
+                <!-- this is just dummy image in order for picture to work, but not load image on mobiles (it is not visible anyway) -->
+                <img class="hero__image" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+        </section> <section class="merch section-gap-vertical-md">
+          <div class="merch__inner container-md">
+            <h2 class="merch__title title fsz-title-lg">Merchandising</h2>
+            <p class="merch__text fsz-text-lg">Photo administration of&nbsp;product display (Merchandising) - Our no‑install,
+              user‑friendly tool allows easy employee management and data handling with photo uploads and location details.
+              Streamline operations with quick data entry, advanced filtering, and Excel export for detailed analysis. Enhance
+              merchandising efficiently.</p>
+            <div class="merch__partners partners">
+              <h2 class="partners__title title fsz-title-lg center">Our Partners</h2>
+              <ul class="partners__list">
+                <li class="partners__partner">
+                  <svg fill="none" viewBox="0 0 103 77">
+                    <title>JTI</title>
+                    <path fill="#06B085"
+                      d="M7.6 77c-.4-.2-.9-.2-1.3-.3-2-.4-3.7-1.1-5-2.7a5.3 5.3 0 0 1-1-5.5c.8-1.9 2.4-2.9 4.3-3.2 3-.5 5.2.9 6.3 3.6.4.9.7 1.8 1.5 2.5 1 1 2.2.9 3-.3.4-.8.7-1.8.7-2.7a45463 45463 0 0 0-.2-48 1.8 1.8 0 0 0-1.7-1.2h-2.6a3 3 0 0 1-2.8-2.3 2.8 2.8 0 0 1 1.9-3.2c.5-.2 1-.2 1.5-.2h24.6c1.4 0 2-.5 2.5-1.8s1.9-2.1 3.4-2.1h38.8c1 0 1 0 1 .9v4.3c0 .7 0 .7-.8.7H71.5c-1.7 0-2.6 1-2.6 2.7V54a4 4 0 0 1-2 3.6L55.6 65l-.8.5c-1.6.6-3-.4-3.2-2V17.9c-.3-1.6-1.1-2.4-2.7-2.4h-5.7c-1.4 0-2 .4-2.4 1.7a3 3 0 0 1-2.9 2H36a1.8 1.8 0 0 0-1.8 1.8v36.1c0 2-.6 4-1.8 5.7a12 12 0 0 1-3.3 3l-12 8.1c-2.1 1.4-4.2 2.5-6.7 3H9.3l-1.7.1ZM84.9 31.5V10.4c0-.6.1-.8.7-.8h16c.6 0 .8.2.8.7v33.4a4 4 0 0 1-2 3.7c-3.9 2.4-7.7 5-11.6 7.5l-1.3.5c-1.5 0-2.4-.7-2.6-2.4V31.5ZM93.6 0h6.6a2.8 2.8 0 0 1 2.8 2.6c.1 1.6-.9 2.8-2.4 3l-1 .1H87.4c-1 0-2-.2-2.6-1.2-.7-1-.8-2-.3-3A2.6 2.6 0 0 1 87 0h6.6Z"></path>
+                  </svg>
+                </li>
+                <li class="partners__partner">
+                  <picture>
+                    <source srcset="/img/pages/main/partners-2.avif" type="image/avif">
+                    <source srcset="/img/pages/main/partners-2.webp" type="image/webp">
+                    <img src="/img/pages/main/partners-2.jpg" alt="IYI Scooter">
+                  </picture>
+                </li>
+                <li class="partners__partner">
+                  <picture>
+                    <source srcset="/img/pages/main/partners-3.avif" type="image/avif">
+                    <source srcset="/img/pages/main/partners-3.webp" type="image/webp">
+                    <img src="/img/pages/main/partners-3.jpg" alt="GSNF">
+                  </picture>
+                </li>
+                <li class="partners__partner">
+                  <picture>
+                    <source srcset="/img/pages/main/partners-4.avif" type="image/avif">
+                    <source srcset="/img/pages/main/partners-4.webp" type="image/webp">
+                    <img src="/img/pages/main/partners-4.jpg" alt>
+                  </picture>
+                </li>
+                <li class="partners__partner">
+                  <picture>
+                    <source srcset="/img/pages/main/partners-5.avif" type="image/avif">
+                    <source srcset="/img/pages/main/partners-5.webp" type="image/webp">
+                    <img src="/img/pages/main/partners-5.jpg" alt="Crumby">
+                  </picture>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </section> <section class="advantages section-gap-vertical-md" id="our-services">
+          <div class="advantages__inner container-lg">
+            <h2 class="advantages__title title fsz-title-lg center mb-38-54">Why choose us?</h2>
+            <ul class="advantages__list text-center">
+              <li class="advantages__item">
+                <svg fill="none" class="advantages__icon" viewBox="0 0 101 100">
+                  <g clip-path="url(#a)">
+                    <path fill="#754E33" d="M50.4 100a50 50 0 1 0 0-100 50 50 0 0 0 0 100Z"></path>
+                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                      d="M36.3 23.9a29 29 0 1 1-10 8.7"></path>
+                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m34.9 24.2 2-4.2M34.9 23.9l4 1.6"></path>
+                    <path stroke="#fff" stroke-width="3" d="M49.9 72.1a22.6 22.6 0 1 0 0-45.2 22.6 22.6 0 0 0 0 45.2Z"></path>
+                    <path fill="#fff"
+                      d="M49.9 30.5c-.7 0-1.3.5-1.3 1.2v1.7c0 .7.6 1.3 1.3 1.3.7 0 1.3-.6 1.3-1.3v-1.7c0-.7-.6-1.2-1.3-1.2ZM49.9 64.3c-.7 0-1.3.6-1.3 1.3v1.7c0 .7.6 1.2 1.3 1.2.7 0 1.3-.5 1.3-1.2v-1.7c0-.7-.6-1.3-1.3-1.3ZM69 49.5c0-.7-.6-1.3-1.3-1.3H66c-.7 0-1.3.6-1.3 1.3 0 .7.6 1.3 1.3 1.3h1.7c.7 0 1.2-.6 1.2-1.3ZM35 49.5c0-.7-.5-1.3-1.2-1.3h-1.7c-.7 0-1.2.6-1.2 1.3 0 .7.5 1.3 1.2 1.3h1.7c.7 0 1.3-.6 1.3-1.3Z"></path>
+                    <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                      d="m43.3 49.6 4.7 4.6 9.7-9.5"></path>
+                  </g>
+                  <defs>
+                    <clippath id="a">
+                      <path fill="#fff" d="M0 0h101v100H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg>
+                <h3 class="advantages__item-title title fsz-text-xlg text-nowrap">Simplicity and Ease of Use</h3>
+                <p class="advantages__item-text">Our service requires no installation or configuration. Administrators can
+                  easily add employees, making the system simple to implement and manage.</p>
+              </li>
+
+              <li class="advantages__item">
+                <svg fill="none" class="advantages__icon" viewBox="0 0 101 100">
+                  <path fill="#754E33" d="M50.4 100a50 50 0 1 0 0-100 50 50 0 0 0 0 100Z"></path>
+                  <path stroke="#fff" stroke-width="3"
+                    d="M43.6 75.6a1.8 1.8 0 0 0 2.4-1l1.4-3.4c1.7.3 3.5.2 5.2 0l1.4 3.5a1.8 1.8 0 0 0 2.3 1l6-2.6c.4-.1.8-.5 1-1v-1.3l-1.5-3.4c1.4-1 2.7-2.3 3.7-3.7l3.4 1.4a1.8 1.8 0 0 0 2.4-1l2.4-5.9a1.8 1.8 0 0 0-1-2.3l-2.4-1-39.7-.4-3.4 1.4c-.9.4-1.3 1.4-1 2.3l2.5 6a1.8 1.8 0 0 0 2.3 1l3.5-1.5c1 1.4 2.3 2.6 3.7 3.7l-1.4 3.4c-.2.4-.2 1 0 1.4.1.4.5.8.9 1l6 2.4Z"></path>
+                  <path stroke="#fff" stroke-width="3"
+                    d="M69.5 55.2H33.8a10.8 10.8 0 1 1 .3-21.6h1l.4-1a12.7 12.7 0 0 1 23.3 0l.4 1h1c3.7 0 7 2.3 8.5 5.7l.3.9h1a7.5 7.5 0 0 1-.5 15Z"></path>
+                  <path fill="#fff" stroke="#fff" stroke-width=".5"
+                    d="M50 65.5c6 0 11.4-3.7 13.5-9.3a1.2 1.2 0 1 0-2.2-.8 12 12 0 0 1-22.6 0 1.2 1.2 0 1 0-2.2.8c2.1 5.6 7.5 9.3 13.5 9.3Z"></path>
+                </svg>
+                <h3 class="advantages__item-title title fsz-text-xlg">Data Management</h3>
+                <p class="advantages__item-text">Ensure data accuracy with photo uploads and precise location info. Speed up
+                  data entry with a predefined list of retail chain stores.</p>
+              </li>
+
+              <li class="advantages__item">
+                <svg fill="none" class="advantages__icon" viewBox="0 0 101 100">
+                  <g clip-path="url(#b)">
+                    <path fill="#754E33" d="M50.4 100a50 50 0 1 0 0-100 50 50 0 0 0 0 100Z"></path>
+                    <path fill="#fff"
+                      d="M62 50.4a2 2 0 0 1-1.8-3l1.6-2.8-2.6-1.5a2 2 0 0 1-1-2v-.4l.1-.5v-.4l-.1-.5a2 2 0 0 1 1-2l2.6-1.4-2-3.5-2.6 1.4a2 2 0 0 1-2.2 0c-.6-.5-1-.8-1.6-1a2 2 0 0 1-1.2-1.9v-2.8h-4v2.8a2 2 0 0 1-1.3 2l-1.6.8a2 2 0 0 1-2.1.1l-2.5-1.4-2 3.5 2.5 1.5a2 2 0 0 1 1 2v.3l-.1.5v1a2 2 0 0 1-1 2l-2.5 1.4 1.6 2.8a2 2 0 0 1-3.5 2l-2.6-4.5a2 2 0 0 1 .7-2.8l3.2-1.8-3.2-1.9a2 2 0 0 1-.7-2.8l4-7A2 2 0 0 1 41 28l3.2 1.8V26c0-1 1-2 2-2h8.2c1 0 2 1 2 2v3.7l3.2-1.8a2 2 0 0 1 2.7.7l4 7a2 2 0 0 1-.7 2.8l-3.1 1.8 3.1 1.9a2 2 0 0 1 .8 2.8l-2.6 4.5c-.4.6-1 1-1.8 1Z"></path>
+                    <path fill="#fff"
+                      d="M49.4 48.4a6.1 6.1 0 1 1 0-12.2 6.1 6.1 0 0 1 0 12.2Zm0-8.1a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path>
+                    <path fill="#fff"
+                      d="M44.2 85a2 2 0 0 1-2-2V65.8l-11-5.6a2 2 0 0 1-1.2-1.8V48.4c0-1.1 1-2 2-2h36.6c1.1 0 2 .9 2 2v10.1a2 2 0 0 1-1.1 1.8l-11 5.6v13a2 2 0 0 1-1.5 1.9l-12.1 4a2 2 0 0 1-.7.1ZM34.1 57.2l11 5.5a2 2 0 0 1 1.1 1.8v15.5l8.2-2.7V64.6a2 2 0 0 1 1.1-1.8l11-5.5v-6.9H34.2v6.9Z"></path>
+                  </g>
+                  <defs>
+                    <clippath id="b">
+                      <path fill="#fff" d="M0 0h101v100H0z"></path>
+                    </clippath>
+                  </defs>
+                </svg>
+                <h3 class="advantages__item-title title fsz-text-xlg">Filtering and Information</h3>
+                <p class="advantages__item-text">Add comments and store names. Use filters to sort data by photos, time, date,
+                  employees, stores, and addresses.</p>
+              </li>
+
+              <li class="advantages__item">
+                <svg fill="none" class="advantages__icon" viewBox="0 0 103 100">
+                  <path fill="#754E33" d="M49.8 100A50 50 0 1 0 49.6.2a50 50 0 0 0 .2 99.8Z"></path>
+                  <path fill="#fff"
+                    d="M51.5 64a2 2 0 0 1-3 0L38 52.3a2 2 0 1 1 3-2.6l7.1 7.8V28a2 2 0 0 1 4 0v29.5l7.2-7.8a2 2 0 0 1 3 2.6L51.4 64Z"></path>
+                  <path fill="#fff"
+                    d="M28 60a2 2 0 0 0-4 0v.1c0 3.7 0 6.6.3 9a10 10 0 0 0 2.6 6 10 10 0 0 0 6 2.6c2.4.3 5.3.3 9 .3H58c3.7 0 6.6 0 9-.3a10 10 0 0 0 6-2.6 10 10 0 0 0 2.6-6c.3-2.4.3-5.3.3-9V60a2 2 0 0 0-4 0c0 3.8 0 6.5-.3 8.5-.2 2-.7 3-1.5 3.7-.7.8-1.7 1.3-3.7 1.5-2 .3-4.7.3-8.5.3H42c-3.8 0-6.5 0-8.5-.3-2-.2-3-.7-3.7-1.5-.8-.7-1.3-1.7-1.5-3.7-.3-2-.3-4.7-.3-8.5Z"></path>
+                  <path fill="#fff" fill-rule="evenodd"
+                    d="M63.2 22.3c-1.3.6-1.6 1.3-1.6 1.7 0 .5.3 1.1 1.6 1.8 1.2.6 3 1 5 1s3.7-.4 4.9-1c1.2-.7 1.6-1.3 1.6-1.8 0-.4-.4-1-1.6-1.7-1.2-.6-3-1-5-1s-3.7.4-4.9 1Zm11.5 5-.7.4c-1.5.8-3.6 1.3-5.9 1.3a13.5 13.5 0 0 1-6.5-1.6v1.4c0 .5.4 1.2 1.6 1.9 1.2.6 3 1 5 1s3.6-.4 4.8-1c1.3-.7 1.7-1.4 1.7-2v-1.3Zm2.2-3.3v13.5c0 1.8-1.3 3-2.8 3.8a13 13 0 0 1-6 1.3 13 13 0 0 1-5.9-1.3c-1.5-.8-2.8-2-2.8-3.8V24c0-1.7 1.3-2.9 2.8-3.6 1.6-.8 3.7-1.3 6-1.3 2.2 0 4.3.5 5.8 1.3 1.5.7 2.9 2 2.9 3.6ZM61.6 36.6v1c0 .4.4 1.1 1.6 1.8 1.2.6 3 1 5 1s3.6-.4 4.8-1c1.3-.7 1.7-1.4 1.7-1.9v-1l-.6.5a13 13 0 0 1-6 1.3 13 13 0 0 1-6.5-1.7Zm12.5-4 .6-.4v1c0 .5-.4 1.2-1.7 1.8-1.2.7-2.9 1-4.9 1-2 0-3.7-.3-4.9-1-1.2-.6-1.6-1.3-1.6-1.8v-1l.6.4a13 13 0 0 0 6 1.3 13 13 0 0 0 5.9-1.3Z"
+                    clip-rule="evenodd"></path>
+
+                </svg>
+                <h3 class="advantages__item-title title fsz-text-xlg">Powerful Data Analysis</h3>
+                <p class="advantages__item-text">Leverage our powerful data analysis tools to export your data to Excel. This
+                  feature allows for in-depth analysis and reporting, providing valuable insights and aiding in better
+                  decision-making.</p>
+              </li>
+            </ul>
+          </div>
+        </section> <section class="pricing section-gap-top-lg section-gap-bottom-md" id="pricing">
+          <div class="pricing__inner container-md">
+            <div class="pricing__header center mb-38-54">
+              <h2 class="pricing__title title fsz-title-lg mb-24-32">Get Started With IDM</h2>
+              <p class="pricing__subtitle title fsz-text-xlg mb-24-32 text-balance">Pricing</p>
+              <div class="pricing__periods">
+                <div>Monthly</div>
+                <input class="pricing__switch visually-hidden switch" type="checkbox" id="pricing__switch">
+                <label class="pricing__switch-visual" for="pricing__switch"></label>
+                <span>Yearly</span>
+              </div>
+            </div>
+
+            <div class="pricing__tiers">
+              <div class="pricing__tiers--standard">
+                <div class="pricing__tiers-card pricing-tier-card pricing-tier-card--standard text-center">
+                  <h3 class="pricing-tier-card__title title fsz-title-lg">Standard</h3>
+                  <h4 class="pricing-tier-card__subtitle title fsz-text-md mb-24-32 text-balance">A happy client is the finest
+                    business approach of all</h4>
+                  <div class="pricing-tier-card__price title fsz-title-xlg"><span
+                      class="pricing-tier-card__currency currency">$</span><span data-price>27</span></div>
+                  <div class="pricing-tier-card__price-info mb-24-32">
+                    <div>Per user</div>
+                    <div>Per <span data-period>month</span></div>
+                  </div>
+                  <button class="pricing-tier-card__more-info btn btn-accent btn-accent--hollow mb-24-32" data-modal-open
+                    data-target="contact-modal" type="button">More Info</button>
+                  <ul class="pricing-tier-card__features">
+                    <li class="pricing-tier-card__feature">Min. 10 Users</li>
+                    <li class="pricing-tier-card__feature">Unlimited Storage</li>
+                    <li class="pricing-tier-card__feature">Unlimited Accounts</li>
+                    <li class="pricing-tier-card__feature">Unlimited Bandwidth</li>
+                    <li class="pricing-tier-card__feature">Unlimited Database</li>
+                  </ul>
+                </div>
+
+                <div class="pricing__tiers__info pricing-tier-info">
+                  <h3 class="pricing-tier-info__title title fsz-title-lg mb-24-32">What do you get?</h3>
+                  <ul class="pricing-tier-info__list">
+                    <li class="pricing-tier-info__item">Your personal website with all the necessary tools</li>
+                    <li class="pricing-tier-info__item">Constant support and feedback from our team</li>
+                    <li class="pricing-tier-info__item">Simple and intuitive interface</li>
+                    <li class="pricing-tier-info__item">Ability to easily add and manage employees and photos</li>
+                    <li class="pricing-tier-info__item">Uploading product photos with exact location</li>
+                    <li class="pricing-tier-info__item">Preliminary list of retail chains for quick data entry</li>
+                    <li class="pricing-tier-info__item">Any useful types of filters for your comfort</li>
+                    <li class="pricing-tier-info__item">Export data to Excel for detailed analysis and reporting.</li>
+                    <li class="pricing-tier-info__item">Future improvements and addition of new handy features</li>
+                  </ul>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section> </main>
+      <footer class="footer section-gap-top-sm">
+        <div class="footer__inner container-md">
+          <nav class="footer__nav nav" aria-label="Footer">
+            <div class="footer__logo-figure logo-figure">
+              <a class="footer__logo logo-figure__link" href="/" title="IDM">
+                <svg class="logo-figure__icon" fill="none" viewBox="0 0 141 61">
+                  <title>IDM</title>
+                  <g class="logo-figure__icon-left">
+                    <path
+                      d="M30.2 3.1c-1 0-22.3 0-25.9 4.8-.4.2-.7.6-.7 1.1 0 .3 0 .6.2.9v9.5c0 6.2 25.3 6.2 26.4 6.2 1 0 26.3 0 26.3-6.2v-10C56.5 3.2 31.2 3 30.2 3Zm0 2.5c13.7 0 22 2.1 23.5 3.5-1 1.4-9.4 3.7-23.7 3.7-13.7 0-22-2.1-23.6-3.5C7.5 7.9 16 5.6 30.2 5.6ZM54 19.3c-.7 1.4-9.1 3.8-23.8 3.8-14.8 0-23.2-2.4-23.9-3.8v-7.2A77.8 77.8 0 0 0 30 15.3c.9 0 17.6 0 24-3.4v7.4Z"></path>
+                    <path
+                      d="M55.2 23.4c-.7 0-1.2.6-1.2 1.3-.7 1.3-9.1 3.7-23.8 3.7C15.4 28.4 7 26 6.3 24.7a1.3 1.3 0 0 0-2.5 0v11C3.8 42 29.1 42 30.2 42c1 0 26.3 0 26.3-6.3v-11c0-.7-.6-1.3-1.3-1.3ZM54 35.7c-.7 1.3-9.1 3.7-23.8 3.7C15.4 39.4 7 37 6.3 35.7v-8c6.5 3.2 23 3.3 23.9 3.3.8 0 17.3 0 23.8-3.3v8Z"></path>
+                    <path
+                      d="M55.2 40c-.7 0-1.2.5-1.2 1.2-.7 1.3-9.1 3.7-23.8 3.7C15.4 45 7 42.5 6.3 41.2a1.3 1.3 0 0 0-2.5 0v11c0 6.2 25.3 6.3 26.4 6.3 1 0 26.3 0 26.3-6.3v-11c0-.7-.6-1.3-1.3-1.3ZM54 52.1c-.7 1.3-9.1 3.8-23.8 3.8C15.4 56 7 53.5 6.3 52.2v-8c6.5 3.2 23 3.3 23.9 3.3.8 0 17.3 0 23.8-3.3v8Z"></path>
+                  </g>
+                  <g class="logo-figure__icon-right">
+                    <path
+                      d="M63.2 0h7.5v30.3h-7.5V0ZM87 30.3H76.3V0h10.6c9.3 0 15.7 6 15.7 15.1 0 9.4-6.7 15.2-15.7 15.2ZM83.7 6.9v16.5H87c5.3 0 8.2-3.3 8.2-8.3 0-1.1-.1-2.1-.4-3.2-1.3-3.6-4.1-5-7.8-5h-3.2Zm31 6.7v16.7h-7.5V0h7.4l9.5 16.7L133.6 0h7.4v30.3h-7.4V13.6l-5.8 9.8h-7.4l-5.8-9.8Z"></path>
+                    <path
+                      d="M63.2 35.7h1.9v7.6h-1.9v-7.6Zm5.2 3.4v4.2h-1.9v-7.6h1.9l2.3 4.2 2.4-4.2h1.8v7.6h-1.8V39l-1.4 2.5h-1.9L68.4 39ZM81 41.8h-2.8l-.6 1.5h-2l3-7.6h2l3 7.6h-2l-.6-1.5ZM78.9 40h1.6l-.8-2.2-.8 2.2Zm11.9-1.3v4.2c-1 .3-2 .5-3 .5-2.4 0-4-1.5-4-3.9 0-2.6 2-3.8 4.3-3.8h1.2l1.1.2v2a3.3 3.3 0 0 0-1-.3l-1.3-.1c-1.5 0-2.4.4-2.4 2s.8 2 2.2 2h1v-1.1h-1.6v-1.7h3.5Zm1.1-3h5.7v1.7h-3.8v1.3h3v1.7h-3v1.2h3.8v1.7h-5.7v-7.6Zm12.6 5.8-1-1a1 1 0 0 0-.4.2l-.2.4c0 .4.5.5 1 .5h.6Zm1.4-2.7h1.8c0 .9-.2 1.6-.5 2.4l.4.2.5.1v1.8c-.7 0-1.4-.4-2-.7-.6.5-1.4.8-2.2.8-1.4 0-2.8-.8-2.8-2.3 0-1 .6-1.7 1.4-2.1a3 3 0 0 1-.2-1.1c0-1.6 1.2-2.2 2.6-2.2h1l1 .2v1.8l-.5-.1h-.5l-.5-.1h-.5c-.4 0-.8 0-.8.5 0 .9 1 1.8 1.6 2.3.2-.4.2-1 .2-1.5Zm8.8 4.5H112v-7.6h2.7c2.3 0 3.9 1.5 3.9 3.8s-1.7 3.8-4 3.8Zm-.8-5.9v4.2h.8c1.3 0 2-.9 2-2v-.9c-.4-.9-1.1-1.3-2-1.3h-.8Zm10.5 4.4h-2.8l-.5 1.5h-2l3-7.6h1.9l3 7.6h-2l-.6-1.5Zm-2.2-1.8h1.6l-.8-2.2-.8 2.2Zm4.2-4.3h6.4v1.7h-2.3v5.9h-1.8v-5.9h-2.3v-1.7Zm12 6h-2.8l-.5 1.6h-2l3-7.6h1.9l3 7.6h-2l-.6-1.5Zm-2.2-1.7h1.6l-.8-2.2-.8 2.2Z"></path>
+                    <path
+                      d="M66.3 53.8v6.8h-3V48.2h3l3.9 6.8 3.9-6.8h3v12.4h-3v-6.8l-2.4 4h-3l-2.4-4Zm21 4.3h-4.7l-.9 2.5h-3.3l5-12.4h3l5 12.4h-3.3l-.9-2.5Zm-3.7-2.8h2.6L85 51.7l-1.3 3.6Zm17-7.1h3.1v12.4h-3l-5-7.3v7.3h-3V48.2h3l5 7.3v-7.3Zm13.2 9.9h-4.6l-.9 2.5H105l5-12.4h3l5 12.4h-3.3l-.9-2.5Zm-3.6-2.8h2.6l-1.3-3.6-1.3 3.6Zm19.6-2.3v7c-1.5.5-3.3.8-4.8.8-4 0-6.7-2.4-6.7-6.3 0-4.3 3.2-6.4 7.1-6.4h1.9l1.9.4v3.1a5.4 5.4 0 0 0-1.7-.4l-2-.2c-2.6 0-4.1.8-4.1 3.5 0 2.5 1.3 3.3 3.7 3.3h1.6v-2h-2.6V53h5.7Zm2-4.8h9.2V51h-6.2v2h5v2.8h-5v2h6.2v2.8h-9.3V48.2Z"></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+
+            <ul class="footer__list nav__list underline-links-on-hover">
+              <li>
+                <a href="#our-services">
+                  Our Services
+                </a>
+              </li>
+              <li>
+                <a href="#pricing">
+                  Pricing
+                </a>
+              </li>
+              <li>
+                <button class="btn btn-accent btn-accent--hollow" data-modal-open data-target="contact-modal"
+                  type="button">Contact us</button>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="footer__copyright text-center">© 2024 IDM. All rights reserved.</div>
+        </div>
+      </footer> </div>
+
+  </body></html>
